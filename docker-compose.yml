@@ -22,9 +22,8 @@ services:
     image: mysql
     container_name: ykat-mysql
     environment:
+      - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=YKAT
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=123456
     ports:
       - "3306:3306"
     volumes:
