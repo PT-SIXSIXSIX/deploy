@@ -29,3 +29,4 @@ services:
     volumes:
       - /data/db:/data/db
       - /var/lib/mysql:/var/lib/mysql
+      - /var/run/mysqld/mysqld.sock:/var/run/mysqld/mysqld.sock
