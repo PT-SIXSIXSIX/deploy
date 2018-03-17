@@ -17,7 +17,7 @@ services:
       - "8080:8080"
     privileged: true
   ykat-mysql:
-    image: daocloud.io/shenaishiren/xiaodi-mysql-auth
+    image: mysql
     container_name: ykat-mysql
     environment:
       - MYSQL_DATABASE=YKAT
