@@ -20,7 +20,7 @@ fi
 
 cd $deployDir
 
-docker-compose up
+docker-compose up -d
 
 sleep 20
 
