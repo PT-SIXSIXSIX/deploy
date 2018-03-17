@@ -2,20 +2,26 @@
 
 rootDir="/root/yikaaitu/"
 springDir="/root/yikaaitu/spring-end"
-composeFile="/root/yikaaitu/docker-compose.yml"
+deployDir="/root/yikaaitu/deploy"
 
 if [ ! -d "$rootDir" ];then
   mkdir -p $rootDir
 fi
 
-cd /root/yikaaitu
+cd $rootDir
 
 if [ ! -d "$springDir" ];then
   git clone https://github.com/PT-SIXSIXSIX/spring-end.git
 fi
 
-if [ ! -f "$composeFile" ];then
-  wget -q https://raw.githubusercontent.com/PT-SIXSIXSIX/deploy/master/docker-compose.yml
+if [ ! -d "$deployDir" ];then
+  git clone https://github.com/PT-SIXSIXSIX/deploy.git
 fi
 
+cd $deployDir
+
 docker-compose up
+
+sleep 20
+
+docker-compose exec ykat-mysql mysql -uroot -p 123456 YKAT < YKAT.sql
