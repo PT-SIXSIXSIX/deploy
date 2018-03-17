@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ykat-vue:
+    image: daocloud.io/shenaishiren/ykat-vue
+    ports:
+      - "8082:80"
+  ykat-node:
+    image: daocloud.io/shenaishiren/ykat-node
+    ports:
+      - "8081:8081"
+  ykat-spring:
+    image: daocloud.io/shenaishiren/ykat-spring
+    ports:
+      - "8080:8080"
+  ykat-mysql:
+    image: daocloud.io/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=hyx
